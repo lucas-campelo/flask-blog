@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
     --bg: #c7c7c7;
@@ -21,6 +22,7 @@ body {
     align-items: center;
 
     position: fixed;
+    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -49,18 +51,18 @@ body {
 }
 
 #wrapper {
+    font-family: 'Roboto', sans-serif;
+
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-start;
 
-    position: fixed;
+    position: absolute;
     top: 60px;
     left: 0;
     height: 100%;
     width: 100%;
-
-    /* background: red; */
 }
 
 section {
@@ -68,11 +70,30 @@ section {
     height: 50%;
     width: 27.5%;
 
+    box-shadow: 4px 4px 10px #3b3b3b;
+
     background: var(--white);
 }
 
 #main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+
     margin: 0 0 0 0;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     width: 40%;
+}
+
+.post {
+    display: block;
+
+    margin: 20px auto;
+    padding: 0 20px;
+    height: auto;
+    width: 85%;
+
+    border-left: 2px solid;
+    box-sizing: border-box;
 }

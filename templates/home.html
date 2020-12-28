@@ -1,6 +1,18 @@
 {% extends "layout.html" %}
 {% block content %}
     <section id="profile"></section>
-    <section id="main-content"></section>
+    <section id="main-content">
+        {% for post in posts %}
+        <div class="post">
+            <h2 id="title">{{ post["title"] }}</h2>
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <div id="author"><em>{{ post["author"] }}</em></div>
+                <div id="date"><em>{{ post["date"] }}</em></div>
+            </div>
+            <hr>
+            <p id="content" style="text-align: justify;">{{ post["content"] }}</p>
+        </div>
+        {% endfor %}
+    </section>
     <section id="control-panel"></section>
 {% endblock %}
