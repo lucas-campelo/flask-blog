@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root {
+    --bg: #c7c7c7;
+    --white: #ededed;
+    --black: #3b3b3b;
+    --blue: #8fbaff;
+}
+
+body {
+    background: var(--bg);
+}
+
+#navbar {
+    font-family: 'Staatliches', cursive;
+    font-size: 22px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    background: var(--black);
+}
+
+#navbar > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 33.33%;
+    height: 100%;
+}
+
+#navbar > a:hover {
+    color: var(--black);
+    background: var(--white);
+}
+
+#navbar > a:link, a:visited {
+    text-decoration: none;
+    color: var(--white);
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    /* background: red; */
+}
+
+section {
+    margin: 15px 0 0 0;
+    height: 50%;
+    width: 27.5%;
+
+    background: var(--white);
+}
+
+#main-content {
+    margin: 0 0 0 0;
+    height: 100%;
+    width: 40%;
+}
