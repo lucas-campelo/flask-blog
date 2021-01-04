@@ -1,6 +1,9 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
+from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "7aab7bb8f0cd69e94f64b854987ae84b"
 
 posts = [
     {
@@ -25,4 +28,17 @@ def home():
 def about():
     return render_template('about.html', title='About')
 
-app.run(port=8000, debug=True)
+@app.route('/register', methods=["GET", "POST"])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f"Welcome {form.username.data}! Your account has been created.", "sucess")
+        return redirect(url_for("home"))
+    return render_template('register.html', title='Register', form=form)
+
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
+
+app.run(port=5000, debug=True)
