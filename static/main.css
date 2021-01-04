@@ -1,15 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --bg: #c7c7c7;
     --white: #ededed;
     --black: #3b3b3b;
     --blue: #8fbaff;
+    --green: #9cffa5;
 }
 
 body {
     background: var(--bg);
+}
+
+.alert-sucess {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    padding: 0 0 0 10px;
+    height: 65px;
+    width: 100%;
+
+    border: solid 2px green;
+
+    color: green;
+    background: var(--green);
 }
 
 #navbar {
